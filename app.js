@@ -8,7 +8,7 @@ var spellService = require('./spell-service');
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3979, function () {
+server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
 // Create connector and listen for messages
@@ -19,7 +19,7 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 var bot = new builder.UniversalBot(connector, function (session) {
-    session.send('Sorry, I did not understand \'%s\'. Type \'help\' if you need assistance.', session.message.text);
+    session.send('Sorry, I could  not understand \'%s\'. Type \'help\' if you need assistance.', session.message.text);
 });
 
 // You can provide your own model by specifing the 'LUIS_MODEL_URL' environment variable
