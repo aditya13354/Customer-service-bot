@@ -16,8 +16,7 @@ var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-server.post('https://customer-bot-test.azurewebsites.net/api/messages?code=bwUNtPflYwn
-oCNxFIGz9wOY3GUK2og22PVXeCDKxJ1ME5dmWRrIafg==', connector.listen());
+server.post('https://customer-bot-test.azurewebsites.net/api/messages?code=bwUNtPflYwnoCNxFIGz9wOY3GUK2og22PVXeCDKxJ1ME5dmWRrIafg==', connector.listen());
 
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send('Sorry, I could  not understand \'%s\'. Type \'help\' if you need assistance.', session.message.text);
